@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ARTÉA — Carrello</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f5f1;
+        color: #171717;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+        background: rgba(247, 245, 241, 0.95);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid #ddd8d0;
+    }
+
+    .navbar {
+        height: 78px;
+        max-width: 1250px;
+        margin: auto;
+        padding: 0 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 4px;
+    }
+
+    .home {
+        text-decoration: none;
+        color: #222;
+        font-weight: 600;
+    }
+
+    main {
+        max-width: 1000px;
+        margin: auto;
+        padding: 140px 25px 80px;
+    }
+
+    h1 {
+        font-size: 48px;
+        margin-bottom: 35px;
+        letter-spacing: -2px;
+    }
+
+    .empty {
+        background: white;
+        border: 1px solid #e7e2da;
+        border-radius: 18px;
+        padding: 50px;
+        text-align: center;
+    }
+
+    .empty p {
+        color: #777;
+        margin-bottom: 25px;
+    }
+
+    .products {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .product {
+        background: white;
+        border: 1px solid #e7e2da;
+        border-radius: 18px;
+        padding: 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .product-info h2 {
+        margin-bottom: 8px;
+    }
+
+    .product-info p {
+        color: #777;
+    }
+
+    .product-price {
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+    .remove {
+        border: none;
+        background: #eee;
+        padding: 10px 14px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .remove:hover {
+        background: #ddd;
+    }
+
+    .summary {
+        margin-top: 30px;
+        background: white;
+        border: 1px solid #e7e2da;
+        border-radius: 18px;
+        padding: 30px;
+    }
+
+    .total {
+        display: flex;
+        justify-content: space-between;
+        font-size: 25px;
+        font-weight: 900;
+        margin-bottom: 25px;
+    }
+
+    .checkout {
+        width: 100%;
+        padding: 17px;
+        border: none;
+        border-radius: 12px;
+        background: #171717;
+        color: white;
+        font-size: 16px;
+        font-weight: 800;
+        cursor: pointer;
+    }
+
+    .checkout:hover {
+        background: #a2764d;
+    }
+
+    .checkout:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .continue {
+        display: inline-block;
+        margin-top: 20px;
+        color: #777;
+        text-decoration: none;
+    }
+
+    .message {
+        margin-top: 15px;
+        text-align: center;
+        color: #a00;
+    }
+
+    @media (max-width: 600px) {
+
+        h1 {
+            font-size: 38px;
+        }
+
+        .product {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .product-right {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+    <div class="logo">
+        ARTÉA
+    </div>
+
+    <a
+        class="home"
+        href="index.html"
+    >
+        ← Torna allo shop
+    </a>
+
+</div>
+
+</header>
+
+<main>
+
+<h1>
+    Il tuo carrello
+</h1>
+
+
+<div id="cartContainer"></div>
+
+</main>
+
+<script> function getCart() { try { return JSON.parse( localStorage.getItem("arteaCart") ) || []; } catch (error) { console.error( "Errore lettura carrello:", error ); return []; } } function saveCart(cart) { localStorage.setItem( "arteaCart", JSON.stringify(cart) ); } function renderCart() { const cart = getCart(); const container = document.getElementById( "cartContainer" ); if ( !Array.isArray(cart) || cart.length === 0 ) { container.innerHTML = ` <div class="empty"> <h2> Il carrello è vuoto </h2> <p> Non hai ancora aggiunto nessun prodotto. </p> <a class="continue" href="index.html" > ← Continua lo shopping </a> </div> `; return; } let total = 0; const products = cart.map( (item, index) => { const price = Number(item.price) || 0; const quantity = Number(item.quantity) || 1; const subtotal = price * quantity; total += subtotal; return ` <div class="product"> <div class="product-info"> <h2> ${escapeHtml( item.name )} </h2> <p> Quantità: ${quantity} </p> </div> <div class="product-right"> <div class="product-price"> €${subtotal.toFixed(2)} </div> <button class="remove" onclick="removeProduct(${index})" > Rimuovi </button> </div> </div> `; } ) .join(""); container.innerHTML = ` <div class="products"> ${products} </div> <div class="summary"> <div class="total"> <span> Totale </span> <span> €${total.toFixed(2)} </span> </div> <button id="checkoutButton" class="checkout" onclick="proceedToCheckout()" > Procedi al checkout </button> <div id="message" class="message" ></div> <a class="continue" href="index.html" > ← Continua lo shopping </a> </div> `; } function removeProduct(index) { const cart = getCart(); cart.splice( index, 1 ); saveCart(cart); renderCart(); } async function proceedToCheckout() { const cart = getCart(); if ( !Array.isArray(cart) || cart.length === 0 ) { alert( "Il carrello è vuoto." ); return; } const button = document.getElementById( "checkoutButton" ); const message = document.getElementById( "message" ); button.disabled = true; button.textContent = "Connessione a Stripe..."; message.textContent = ""; try { const response = await fetch( "https://artea-shop-2.onrender.com/create-checkout-session", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ cart: cart }) } ); const data = await response.json(); if (!response.ok) { throw new Error( data.error || "Errore nella creazione del checkout." ); } if (!data.url) { throw new Error( "Stripe non ha restituito il link di pagamento." ); } window.location.href = data.url; } catch (error) { console.error( "Errore checkout:", error ); message.textContent = error.message || "Impossibile avviare il pagamento."; button.disabled = false; button.textContent = "Procedi al checkout"; } } function escapeHtml(value) { return String( value ?? "" ) .replace( /&/g, "&amp;" ) .replace( /</g, "&lt;" ) .replace( />/g, "&gt;" ) .replace( /"/g, "&quot;" ) .replace( /'/g, "&#039;" ); } renderCart(); </script>
+
+</body>
+
+</html>

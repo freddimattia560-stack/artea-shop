@@ -1,0 +1,343 @@
+```html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>ARTÉA — Beige Flow</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f7f5f1;
+color:#171717;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:10;
+background:rgba(247,245,241,.9);
+backdrop-filter:blur(18px);
+border-bottom:1px solid #ddd8d0;
+}
+
+.navbar{
+height:78px;
+max-width:1250px;
+margin:auto;
+padding:0 25px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-size:24px;
+font-weight:900;
+letter-spacing:4px;
+}
+
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:#222;
+font-weight:600;
+font-size:14px;
+}
+
+.cart{
+border:1px solid #ddd8d0;
+background:white;
+padding:11px 18px;
+border-radius:30px;
+}
+
+.product-page{
+max-width:1200px;
+margin:auto;
+padding:150px 25px 100px;
+}
+
+.breadcrumb{
+color:#888;
+font-size:13px;
+margin-bottom:35px;
+}
+
+.product-layout{
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:70px;
+align-items:center;
+}
+
+.visual{
+height:620px;
+padding:20px;
+background:#171717;
+box-shadow:0 30px 70px rgba(0,0,0,.2);
+}
+
+.art{
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 30% 30%,#d6bda1 0 17%,transparent 18%),
+radial-gradient(circle at 70% 65%,#222 0 23%,transparent 24%),
+linear-gradient(135deg,#c19a74,#eee6da);
+}
+
+.eyebrow{
+color:#a2764d;
+font-size:12px;
+letter-spacing:3px;
+font-weight:800;
+}
+
+h1{
+font-size:60px;
+letter-spacing:-3px;
+margin:15px 0;
+}
+
+.description{
+color:#777;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.price{
+font-size:32px;
+font-weight:900;
+margin-bottom:25px;
+}
+
+.specs{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin:30px 0;
+}
+
+.spec{
+background:white;
+padding:18px;
+border-radius:14px;
+border:1px solid #e7e2da;
+}
+
+.spec small{
+display:block;
+color:#888;
+margin-bottom:5px;
+}
+
+.buy{
+display:flex;
+gap:10px;
+}
+
+.quantity{
+width:80px;
+border:1px solid #ddd8d0;
+border-radius:12px;
+padding:15px;
+}
+
+.add{
+flex:1;
+border:none;
+border-radius:12px;
+background:#171717;
+color:white;
+font-weight:800;
+cursor:pointer;
+}
+
+.add:hover{
+background:#a2764d;
+}
+
+.back{
+display:inline-block;
+margin-top:25px;
+color:#777;
+}
+
+@media(max-width:800px){
+
+.product-layout{
+grid-template-columns:1fr;
+}
+
+.visual{
+height:450px;
+}
+
+h1{
+font-size:45px;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">ARTÉA</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="collezioni.html">Collezioni</a>
+<a href="chi-siamo.html">Chi siamo</a>
+<a href="contatti.html">Contatti</a>
+</nav>
+
+<button class="cart"
+onclick="location.href='carrello.html'">
+🛒 Carrello
+</button>
+
+</div>
+
+</header>
+
+<main class="product-page">
+
+<div class="breadcrumb">
+Home / Shop / Beige Flow
+</div>
+
+<div class="product-layout">
+
+<div class="visual">
+<div class="art"></div>
+</div>
+
+<div>
+
+<span class="eyebrow">
+ARTÉA ABSTRACT COLLECTION
+</span>
+
+<h1>Beige Flow</h1>
+
+<p class="description">
+Una composizione astratta dalle tonalità calde e
+naturali, pensata per creare un'atmosfera elegante
+e rilassante.
+</p>
+
+<div class="price">
+€27,90
+</div>
+
+<div class="specs">
+
+<div class="spec">
+<small>Formato</small>
+<strong>60 × 40 cm</strong>
+</div>
+
+<div class="spec">
+<small>Stile</small>
+<strong>Astratto</strong>
+</div>
+
+<div class="spec">
+<small>Palette</small>
+<strong>Beige / Nero</strong>
+</div>
+
+<div class="spec">
+<small>Ambiente</small>
+<strong>Living / Camera</strong>
+</div>
+
+</div>
+
+<div class="buy">
+
+<input
+class="quantity"
+type="number"
+value="1"
+min="1"
+id="quantity"
+>
+
+<button
+class="add"
+onclick="addProduct()">
+Aggiungi al carrello
+</button>
+
+</div>
+
+<a class="back" href="shop.html">
+← Torna allo shop
+</a>
+
+</div>
+
+</div>
+
+</main>
+
+<script>
+
+function addProduct(){
+
+let quantity =
+Number(document.getElementById("quantity").value);
+
+let cart =
+JSON.parse(localStorage.getItem("arteaCart")) || [];
+
+for(let i=0;i<quantity;i++){
+
+cart.push({
+name:"Beige Flow",
+price:27.90
+});
+
+}
+
+localStorage.setItem(
+"arteaCart",
+JSON.stringify(cart)
+);
+
+alert("Prodotto aggiunto al carrello!");
+
+}
+
+</script>
+
+</body>
+</html>
+```

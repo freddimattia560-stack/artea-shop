@@ -1,0 +1,93 @@
+[
+  {
+    "id": "cs_test_a1KITc0SIbduoPNeoOwmszGFKvewxXeMYqgy7LahR50HtAtGKqupCUPR8X",
+    "date": "2026-09-05T10:07:26.409Z",
+    "status": "paid",
+    "amount_total": 2790,
+    "currency": "eur",
+    "customer_email": "freddimattia560@gmail.com",
+    "customer_name": "Freddi Mattia Noah",
+    "shipping_address": null
+  },
+  {
+    "id": "cs_test_a1gCLlONCuDPEtnV9AbqYP6HnAcH3KNrExVW8LrDPQ6JLZb4m93uUDQEP0",
+    "date": "2026-09-05T10:12:24.807Z",
+    "status": "paid",
+    "amount_total": 2790,
+    "currency": "eur",
+    "customer_email": "freddimattia560@gmail.com",
+    "customer_name": "Freddi Mattia",
+    "shipping_address": null,
+    "products": [
+      {
+        "name": "Beige Flow",
+        "quantity": 1,
+        "price": 2790
+      }
+    ]
+  },
+  {
+    "order_number": "ART-000001",
+    "id": "cs_test_a1vOcfB0qlFwiwt9wC6ECbV5UMQ47g2Er5k12LEut7xHcaOMElmdZjsiZC",
+    "date": "2026-09-05T10:34:32.533Z",
+    "status": "paid",
+    "amount_total": 2790,
+    "currency": "eur",
+    "customer_email": "freddimattia560@gmail.com",
+    "customer_name": "Freddi Mattia",
+    "shipping_address": null,
+    "products": [
+      {
+        "name": "Beige Flow",
+        "quantity": 1,
+        "price": 2790
+      }
+    ]
+  },
+  {
+    "order_number": "ART-000002",
+    "id": "cs_test_b115eWPMkSsNOoJSg1kzyP4D9UKQUhCUtBpE3S6635icFLlHTUjPSGwUXX",
+    "date": "2026-09-05T10:38:15.454Z",
+    "status": "paid",
+    "amount_total": 8770,
+    "currency": "eur",
+    "customer_email": "freddimattia560@gmail.com",
+    "customer_name": "Freddi Mattia Noah",
+    "shipping_address": null,
+    "products": [
+      {
+        "name": "Lines",
+        "quantity": 1,
+        "price": 2490
+      },
+      {
+        "name": "Beige Flow",
+        "quantity": 1,
+        "price": 2790
+      },
+      {
+        "name": "Dark Balance",
+        "quantity": 1,
+        "price": 3490
+      }
+    ]
+  },
+  {
+    "order_number": "ART-000003",
+    "id": "cs_test_a1d466z0uuxlHmsQbsTGg1wsBvzLVXAk6OVfasZXXVXCWjAlWQWQ519DLK",
+    "date": "2026-09-05T11:00:03.793Z",
+    "status": "paid",
+    "amount_total": 2790,
+    "currency": "eur",
+    "customer_email": "freddimattia560@gmail.com",
+    "customer_name": "Freddi Mattia Noah",
+    "shipping_address": null,
+    "products": [
+      {
+        "name": "Beige Flow",
+        "quantity": 1,
+        "price": 2790
+      }
+    ]
+  }
+]

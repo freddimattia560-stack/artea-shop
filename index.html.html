@@ -1,0 +1,3272 @@
+```html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ARTÉA — Quadri Moderni</title>
+
+    <meta
+        name="description"
+        content="Scopri quadri moderni e minimal dal design elegante e contemporaneo."
+    >
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f7f5f1;
+            color: #171717;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background:
+                rgba(247, 245, 241, 0.88);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid rgba(0, 0, 0, 0.07);
+        }
+
+        .navbar {
+            max-width: 1250px;
+            margin: auto;
+
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 4px;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #222;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.25s;
+        }
+
+        nav a:hover {
+            color: #a2764d;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .icon-btn {
+            width: 42px;
+            height: 42px;
+
+            border:
+                1px solid #ddd8d0;
+
+            background: #fff;
+
+            border-radius: 50%;
+
+            display: grid;
+            place-items: center;
+
+            transition: 0.25s;
+        }
+
+        .icon-btn:hover {
+            transform: translateY(-2px);
+            background: #171717;
+            color: white;
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 760px;
+
+            padding:
+                150px
+                25px
+                80px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    #e9dccb 0,
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 10% 90%,
+                    #ded8cf 0,
+                    transparent 30%
+                ),
+
+                #f7f5f1;
+        }
+
+        .hero-inner {
+            max-width: 1250px;
+            width: 100%;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+
+            margin-bottom: 20px;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            color: #92704e;
+        }
+
+        .hero h1 {
+            font-size:
+                clamp(
+                    48px,
+                    6vw,
+                    86px
+                );
+
+            line-height: 0.95;
+
+            letter-spacing: -4px;
+
+            max-width: 650px;
+
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: #a2764d;
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 520px;
+
+            color: #68645e;
+
+            line-height: 1.8;
+
+            font-size: 17px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: none;
+
+            border-radius: 999px;
+
+            padding:
+                15px
+                25px;
+
+            font-weight: 800;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #171717;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #a2764d;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #171717;
+
+            border:
+                1px solid #ddd8d0;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+        }
+
+        /* =====================================================
+           HERO ART
+        ===================================================== */
+
+        .hero-art {
+            position: relative;
+
+            height: 500px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .art-frame {
+            width: 350px;
+            height: 430px;
+
+            padding: 14px;
+
+            background: #171717;
+
+            box-shadow:
+                0 40px 80px rgba(0,0,0,0.22),
+                0 10px 20px rgba(0,0,0,0.1);
+
+            transform: rotate(4deg);
+
+            animation:
+                floating
+                5s
+                ease-in-out
+                infinite;
+        }
+
+        .art-image {
+            width: 100%;
+            height: 100%;
+
+            background:
+                radial-gradient(
+                    circle at 30% 30%,
+                    #e8d5bd 0 12%,
+                    transparent 13%
+                ),
+
+                radial-gradient(
+                    circle at 70% 60%,
+                    #1b1b1b 0 20%,
+                    transparent 21%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #bd9672,
+                    #eee6da 50%,
+                    #272727
+                );
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .art-image::after {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 500px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.12
+                );
+
+            transform: rotate(25deg);
+
+            left: -100px;
+            top: -100px;
+        }
+
+        .floating-card {
+            position: absolute;
+
+            right: 0;
+            bottom: 35px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.9
+                );
+
+            backdrop-filter: blur(10px);
+
+            padding:
+                20px
+                25px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.12);
+        }
+
+        .floating-card strong {
+            display: block;
+            font-size: 20px;
+        }
+
+        .floating-card small {
+            color: #777;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform:
+                    rotate(4deg)
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    rotate(2deg)
+                    translateY(-15px);
+            }
+
+        }
+
+        /* =====================================================
+           FEATURES
+        ===================================================== */
+
+        .features {
+            background: #171717;
+            color: white;
+
+            padding:
+                30px
+                25px;
+        }
+
+        .features-inner {
+            max-width: 1250px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .feature {
+            padding: 20px;
+
+            border-right:
+                1px solid
+                rgba(255,255,255,0.1);
+        }
+
+        .feature:last-child {
+            border-right: none;
+        }
+
+        .feature-icon {
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        .feature strong {
+            display: block;
+
+            margin-bottom: 5px;
+        }
+
+        .feature span {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        /* =====================================================
+           SHOP
+        ===================================================== */
+
+        .shop {
+            max-width: 1250px;
+            margin: auto;
+
+            padding:
+                110px
+                25px;
+        }
+
+        .section-heading {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: end;
+
+            gap: 30px;
+
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 48px;
+
+            letter-spacing: -2px;
+        }
+
+        .section-heading p {
+            color: #777;
+
+            max-width: 430px;
+
+            line-height: 1.6;
+        }
+
+        .filters {
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 35px;
+        }
+
+        .filter {
+            border:
+                1px solid #ddd8d0;
+
+            background: white;
+
+            padding:
+                11px
+                18px;
+
+            border-radius: 999px;
+
+            transition: 0.2s;
+        }
+
+        .filter:hover,
+        .filter.active {
+            background: #171717;
+            color: white;
+        }
+
+        /* =====================================================
+           PRODUCTS
+        ===================================================== */
+
+        .products {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    4,
+                    minmax(0, 1fr)
+                );
+
+            gap: 22px;
+        }
+
+        .product {
+            background: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            position: relative;
+
+            transition: 0.3s;
+
+            border:
+                1px solid #ebe7e0;
+        }
+
+        .product:hover {
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 300px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .product-image-inner {
+            width: 100%;
+            height: 100%;
+
+            transition: 0.5s;
+        }
+
+        .product:hover
+        .product-image-inner {
+            transform: scale(1.06);
+        }
+
+        .image-1 {
+            background:
+                radial-gradient(
+                    circle at 30% 35%,
+                    #d2b89d 0 18%,
+                    transparent 19%
+                ),
+
+                linear-gradient(
+                    140deg,
+                    #f0e8dd,
+                    #262626
+                );
+        }
+
+        .image-2 {
+            background:
+                linear-gradient(
+                    45deg,
+                    transparent 40%,
+                    #111 41% 48%,
+                    transparent 49%
+                ),
+
+                linear-gradient(
+                    120deg,
+                    #d5b28e,
+                    #eee5d9
+                );
+        }
+
+        .image-3 {
+            background:
+                radial-gradient(
+                    circle at 65% 45%,
+                    #222 0 25%,
+                    transparent 26%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #e3d2bf,
+                    #92704e
+                );
+        }
+
+        .image-4 {
+            background:
+                linear-gradient(
+                    150deg,
+                    #151515 0 35%,
+                    #d8c3aa 36% 65%,
+                    #f1ece5 66%
+                );
+        }
+
+        .image-5 {
+            background:
+                radial-gradient(
+                    circle at 50% 50%,
+                    #c5a079 0 30%,
+                    transparent 31%
+                ),
+
+                #e8ded1;
+        }
+
+        .image-6 {
+            background:
+                linear-gradient(
+                    35deg,
+                    #111 0 25%,
+                    transparent 26%
+                ),
+
+                linear-gradient(
+                    160deg,
+                    #d9c2a8,
+                    #eee8df
+                );
+        }
+
+        .image-7 {
+            background:
+                radial-gradient(
+                    circle at 40% 40%,
+                    #222 0 18%,
+                    transparent 19%
+                ),
+
+                linear-gradient(
+                    120deg,
+                    #f0e9df,
+                    #b28b67
+                );
+        }
+
+        .image-8 {
+            background:
+                linear-gradient(
+                    70deg,
+                    #1d1d1d 0 30%,
+                    #d0b393 31% 55%,
+                    #eee5d9 56%
+                );
+        }
+
+        .sale {
+            position: absolute;
+
+            top: 15px;
+            left: 15px;
+
+            background: #171717;
+            color: white;
+
+            padding:
+                7px
+                10px;
+
+            border-radius: 7px;
+
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .heart {
+            position: absolute;
+
+            top: 15px;
+            right: 15px;
+
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.9
+                );
+
+            font-size: 18px;
+
+            transition: 0.2s;
+        }
+
+        .heart:hover {
+            transform: scale(1.1);
+
+            color: #c14b4b;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 7px;
+            font-size: 17px;
+        }
+
+        .product-info p {
+            color: #888;
+
+            font-size: 13px;
+
+            margin-bottom: 15px;
+        }
+
+        .product-bottom {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+        }
+
+        .price {
+            font-weight: 900;
+            font-size: 19px;
+        }
+
+        .add-cart {
+            border: none;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            background: #171717;
+            color: white;
+
+            transition: 0.25s;
+        }
+
+        .add-cart:hover {
+            background: #a2764d;
+
+            transform: scale(1.08);
+        }
+
+        /* =====================================================
+           BANNER
+        ===================================================== */
+
+        .banner {
+            max-width: 1250px;
+
+            margin:
+                0
+                auto
+                110px;
+
+            padding: 70px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #171717,
+                    #37332f
+                );
+
+            color: white;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .banner::before {
+            content: "";
+
+            position: absolute;
+
+            width: 400px;
+            height: 400px;
+
+            border-radius: 50%;
+
+            background: #a2764d;
+
+            opacity: 0.25;
+
+            right: -100px;
+            top: -150px;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner h2 {
+            font-size: 48px;
+
+            max-width: 650px;
+
+            margin-bottom: 18px;
+        }
+
+        .banner p {
+            color: #c9c9c9;
+
+            max-width: 550px;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+        /* =====================================================
+           NEWSLETTER
+        ===================================================== */
+
+        .newsletter {
+            text-align: center;
+
+            padding:
+                100px
+                25px;
+
+            background: #e8e1d7;
+        }
+
+        .newsletter h2 {
+            font-size: 44px;
+
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            color: #6f6a63;
+
+            margin-bottom: 30px;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+
+            margin: auto;
+
+            display: flex;
+
+            background: white;
+
+            padding: 6px;
+
+            border-radius: 999px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+
+            border: none;
+
+            outline: none;
+
+            padding:
+                14px
+                20px;
+
+            background: transparent;
+        }
+
+        .newsletter-form button {
+            border: none;
+
+            background: #171717;
+            color: white;
+
+            border-radius: 999px;
+
+            padding:
+                13px
+                22px;
+
+            font-weight: 800;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #111;
+            color: white;
+
+            padding:
+                70px
+                25px
+                30px;
+        }
+
+        .footer-inner {
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                2fr
+                1fr
+                1fr
+                1fr;
+
+            gap: 50px;
+        }
+
+        footer h3 {
+            margin-bottom: 20px;
+        }
+
+        footer p,
+        footer a {
+            color: #999;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        footer a {
+            display: block;
+
+            text-decoration: none;
+
+            margin-bottom: 8px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1250px;
+
+            margin:
+                60px
+                auto
+                0;
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid #292929;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+        /* =====================================================
+           CART
+        ===================================================== */
+
+        .cart {
+            position: fixed;
+
+            right: -420px;
+            top: 0;
+
+            width: 400px;
+
+            max-width: 90%;
+
+            height: 100vh;
+
+            background: white;
+
+            z-index: 2000;
+
+            box-shadow:
+                -20px
+                0
+                50px
+                rgba(0,0,0,0.15);
+
+            padding: 30px;
+
+            transition: 0.4s;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        .cart.open {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            padding-bottom: 20px;
+
+            border-bottom:
+                1px solid #eee;
+        }
+
+        .close-cart {
+            border: none;
+
+            background: transparent;
+
+            font-size: 25px;
+        }
+
+        .cart-items {
+            flex: 1;
+
+            overflow-y: auto;
+
+            padding:
+                20px
+                0;
+        }
+
+        .empty-cart {
+            text-align: center;
+
+            color: #888;
+
+            margin-top: 50px;
+        }
+
+        .cart-item {
+            display: flex;
+
+            gap: 15px;
+
+            padding:
+                15px
+                0;
+
+            border-bottom:
+                1px solid #eee;
+        }
+
+        .cart-thumb {
+            width: 70px;
+            height: 70px;
+
+            border-radius: 10px;
+
+            flex-shrink: 0;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-info strong {
+            display: block;
+
+            margin-bottom: 5px;
+        }
+
+        .remove {
+            border: none;
+
+            background: transparent;
+
+            color: #999;
+
+            font-size: 20px;
+        }
+
+        .cart-footer {
+            border-top:
+                1px solid #eee;
+
+            padding-top: 20px;
+        }
+
+        .total {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            font-size: 20px;
+
+            font-weight: 900;
+
+            margin-bottom: 20px;
+        }
+
+        .checkout {
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: #171717;
+
+            color: white;
+
+            font-weight: 800;
+
+            transition: 0.2s;
+        }
+
+        .checkout:hover {
+            background: #a2764d;
+        }
+
+        .checkout:disabled {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        /* =====================================================
+           OVERLAY
+        ===================================================== */
+
+        .overlay {
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,0.4);
+
+            z-index: 1500;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition: 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+
+            pointer-events: all;
+        }
+
+        /* =====================================================
+           TOAST
+        ===================================================== */
+
+        .toast {
+            position: fixed;
+
+            bottom: 30px;
+            left: 50%;
+
+            transform:
+                translate(
+                    -50%,
+                    100px
+                );
+
+            background: #171717;
+
+            color: white;
+
+            padding:
+                15px
+                25px;
+
+            border-radius: 999px;
+
+            z-index: 5000;
+
+            opacity: 0;
+
+            transition: 0.4s;
+        }
+
+        .toast.show {
+            opacity: 1;
+
+            transform:
+                translate(
+                    -50%,
+                    0
+                );
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .products {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .features-inner {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .feature {
+                border-right: none;
+            }
+
+            .footer-inner {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 750px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero-art {
+                height: 420px;
+            }
+
+            .art-frame {
+                width: 270px;
+                height: 340px;
+            }
+
+            .section-heading {
+                flex-direction: column;
+
+                align-items: start;
+            }
+
+            .section-heading h2 {
+                font-size: 38px;
+            }
+
+            .banner {
+                margin:
+                    0
+                    20px
+                    80px;
+
+                padding:
+                    45px
+                    30px;
+            }
+
+            .banner h2 {
+                font-size: 36px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+
+                border-radius: 15px;
+
+                gap: 5px;
+            }
+
+            .newsletter-form button {
+                width: 100%;
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .features-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .floating-card {
+                right: 5px;
+            }
+
+            .cart {
+                width: 100%;
+                max-width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+                ARTÉA
+            </div>
+
+
+            <nav>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#shop">
+                    Shop
+                </a>
+
+                <a href="#collezione">
+                    Collezione
+                </a>
+
+                <a href="#contatti">
+                    Contatti
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="icon-btn"
+                    onclick="openCart()"
+                    aria-label="Apri carrello"
+                >
+                    🛒
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="hero-inner">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        ARTE • DESIGN • CASA
+                    </span>
+
+
+                    <h1>
+
+                        Trasforma le tue pareti in qualcosa di
+
+                        <span>
+                            speciale.
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Quadri moderni e minimal pensati
+                        per dare carattere ai tuoi spazi.
+                        Formato 60×40 cm, design contemporaneo
+                        e prezzi accessibili.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#shop"
+                            class="btn btn-primary"
+                            style="text-decoration:none;"
+                        >
+                            Scopri la collezione
+                        </a>
+
+
+                        <a
+                            href="#collezione"
+                            class="btn btn-secondary"
+                            style="text-decoration:none;"
+                        >
+                            Come funziona
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-art">
+
+                    <div class="art-frame">
+
+                        <div class="art-image"></div>
+
+                    </div>
+
+
+                    <div class="floating-card">
+
+                        <strong>
+                            60 × 40 cm
+                        </strong>
+
+                        <small>
+                            Il formato più amato
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FEATURES
+        ================================================== -->
+
+        <section class="features">
+
+            <div class="features-inner">
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🚚
+                    </div>
+
+                    <strong>
+                        Spedizione veloce
+                    </strong>
+
+                    <span>
+                        Consegna direttamente a casa tua.
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✨
+                    </div>
+
+                    <strong>
+                        Design moderno
+                    </strong>
+
+                    <span>
+                        Collezioni pensate per gli interni contemporanei.
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        💶
+                    </div>
+
+                    <strong>
+                        Prezzi accessibili
+                    </strong>
+
+                    <span>
+                        Arte bella senza spendere una fortuna.
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🔒
+                    </div>
+
+                    <strong>
+                        Acquisto sicuro
+                    </strong>
+
+                    <span>
+                        Un'esperienza semplice e trasparente.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SHOP
+        ================================================== -->
+
+        <section
+            class="shop"
+            id="shop"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        BESTSELLER
+                    </span>
+
+                    <h2>
+                        I nostri quadri
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    Una selezione di stampe e opere decorative
+                    ideali per soggiorno, camera da letto,
+                    ufficio e ingresso.
+
+                </p>
+
+            </div>
+
+
+            <div class="filters">
+
+                <button
+                    class="filter active"
+                    onclick="filterProducts('all', this)"
+                >
+                    Tutti
+                </button>
+
+
+                <button
+                    class="filter"
+                    onclick="filterProducts('abstract', this)"
+                >
+                    Astratti
+                </button>
+
+
+                <button
+                    class="filter"
+                    onclick="filterProducts('minimal', this)"
+                >
+                    Minimal
+                </button>
+
+
+                <button
+                    class="filter"
+                    onclick="filterProducts('premium', this)"
+                >
+                    Premium
+                </button>
+
+            </div>
+
+
+            <div
+                class="products"
+                id="products"
+            >
+
+
+                <!-- PRODUCT 1 -->
+
+                <article
+                    class="product"
+                    data-category="abstract"
+                >
+
+                    <div class="product-image">
+
+                        <div
+                            class="product-image-inner image-1"
+                        ></div>
+
+
+                        <span class="sale">
+                            -20%
+                        </span>
+
+
+                        <button
+                            class="heart"
+                            onclick="favorite(this)"
+                            aria-label="Aggiungi ai preferiti"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Beige Flow
+                        </h3>
+
+                        <p>
+                            Astratto • 60×40 cm
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                €27,90
+                            </span>
+
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart('Beige Flow', 27.90, 'image-1')"
+                                aria-label="Aggiungi Beige Flow al carrello"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 2 -->
+
+                <article
+                    class="product"
+                    data-category="minimal"
+                >
+
+                    <div class="product-image">
+
+                        <div
+                            class="product-image-inner image-2"
+                        ></div>
+
+
+                        <button
+                            class="heart"
+                            onclick="favorite(this)"
+                            aria-label="Aggiungi ai preferiti"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Lines
+                        </h3>
+
+                        <p>
+                            Minimal • 60×40 cm
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                €24,90
+                            </span>
+
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart('Lines', 24.90, 'image-2')"
+                                aria-label="Aggiungi Lines al carrello"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 3 -->
+
+                <article
+                    class="product"
+                    data-category="premium"
+                >
+
+                    <div class="product-image">
+
+                        <div
+                            class="product-image-inner image-3"
+                        ></div>
+
+
+                        <span class="sale">
+                            BESTSELLER
+                        </span>
+
+
+                        <button
+                            class="heart"
+                            onclick="favorite(this)"
+                            aria-label="Aggiungi ai preferiti"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Dark Balance
+                        </h3>
+
+                        <p>
+                            Premium • 60×40 cm
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                €34,90
+                            </span>
+
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart('Dark Balance', 34.90, 'image-3')"
+                                aria-label="Aggiungi Dark Balance al carrello"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 4 -->
+
+                <article
+                    class="product"
+                    data-category="minimal"
+                >
+
+                    <div class="product-image">
+
+                        <div
+                            class="product-image-inner image-4"
+                        ></div>
+
+
+                        <button
+                            class="heart"
+                            onclick="favorite(this)"
+                            aria-label="Aggiungi ai preferiti"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Contrast
+                        </h3>
+
+                        <p>
+                            Minimal • 60×40 cm
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                €22,90
+                            </span>
+
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart('Contrast', 22.90, 'image-4')"
+                                aria-label="Aggiungi Contrast al carrello"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 5 -->
+
+                <article
+                    class="product"
+                    data-category="abstract"
+                >
+
+                    <div class="product-image">
+
+                        <div
+                            class="product-image-inner image-5"
+                        ></div>
+
+
+                        <button
+                            class="heart"
+                            onclick="favorite(this)"
+                            aria-label="Aggiungi ai preferiti"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Sand Circle
+                        </h3>
+
+                        <p>
+                            Astratto • 60×40 cm
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                €26,90
+                            </span>
+
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart('Sand Circle', 26.90, 'image-5')"
+                                aria-label="Aggiungi Sand Circle al carrello"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 6 -->
+
+                <article
+                    class="product"
+                    data-category="premium"
+                >
+
+                    <div class="product-image">
+
+                        <div
+                            class="product-image-inner image-6"
+                        ></div>
+
+
+                        <button
+                            class="heart"
+                            onclick="favorite(this)"
+                            aria-label="Aggiungi ai preferiti"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Architecture
+                        </h3>
+
+                        <p>
+                            Premium • 60×40 cm
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                €39,90
+                            </span>
+
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart('Architecture', 39.90, 'image-6')"
+                                aria-label="Aggiungi Architecture al carrello"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 7 -->
+
+                <article
+                    class="product"
+                    data-category="abstract"
+                >
+
+                    <div class="product-image">
+
+                        <div
+                            class="product-image-inner image-7"
+                        ></div>
+
+
+                        <button
+                            class="heart"
+                            onclick="favorite(this)"
+                            aria-label="Aggiungi ai preferiti"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Organic Form
+                        </h3>
+
+                        <p>
+                            Astratto • 60×40 cm
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                €29,90
+                            </span>
+
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart('Organic Form', 29.90, 'image-7')"
+                                aria-label="Aggiungi Organic Form al carrello"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 8 -->
+
+                <article
+                    class="product"
+                    data-category="minimal"
+                >
+
+                    <div class="product-image">
+
+                        <div
+                            class="product-image-inner image-8"
+                        ></div>
+
+
+                        <button
+                            class="heart"
+                            onclick="favorite(this)"
+                            aria-label="Aggiungi ai preferiti"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Warm Geometry
+                        </h3>
+
+                        <p>
+                            Minimal • 60×40 cm
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                €25,90
+                            </span>
+
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart('Warm Geometry', 25.90, 'image-8')"
+                                aria-label="Aggiungi Warm Geometry al carrello"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BANNER
+        ================================================== -->
+
+        <section
+            class="banner"
+            id="collezione"
+        >
+
+            <div class="banner-content">
+
+                <span class="eyebrow">
+                    IL TUO SPAZIO
+                </span>
+
+
+                <h2>
+                    Piccoli dettagli.
+                    Grande atmosfera.
+                </h2>
+
+
+                <p>
+
+                    Un quadro può cambiare completamente
+                    l'atmosfera di una stanza. Scegli colori,
+                    forme e composizioni che raccontano
+                    il tuo stile.
+
+                </p>
+
+
+                <a
+                    href="#shop"
+                    class="btn btn-secondary"
+                    style="text-decoration:none;"
+                >
+                    Esplora i quadri
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NEWSLETTER
+        ================================================== -->
+
+        <section class="newsletter">
+
+            <span class="eyebrow">
+                ARTÉA CLUB
+            </span>
+
+
+            <h2>
+                Ispirazione direttamente nella tua inbox.
+            </h2>
+
+
+            <p>
+                Ricevi nuove collezioni, offerte e idee
+                per arredare le tue pareti.
+            </p>
+
+
+            <form
+                class="newsletter-form"
+                onsubmit="subscribe(event)"
+            >
+
+                <input
+                    type="email"
+                    placeholder="La tua email"
+                    autocomplete="email"
+                    required
+                >
+
+
+                <button type="submit">
+                    Iscriviti
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer id="contatti">
+
+        <div class="footer-inner">
+
+
+            <div>
+
+                <div class="logo">
+                    ARTÉA
+                </div>
+
+
+                <p style="margin-top:20px;">
+
+                    Quadri moderni e accessibili
+                    per rendere ogni ambiente
+                    più personale.
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Shop
+                </h3>
+
+
+                <a href="#shop">
+                    Tutti i quadri
+                </a>
+
+                <a href="#shop">
+                    Astratti
+                </a>
+
+                <a href="#shop">
+                    Minimal
+                </a>
+
+                <a href="#shop">
+                    Bestseller
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Informazioni
+                </h3>
+
+
+                <a href="#">
+                    Spedizioni
+                </a>
+
+                <a href="#">
+                    Resi
+                </a>
+
+                <a href="#">
+                    FAQ
+                </a>
+
+                <a href="#">
+                    Privacy
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Seguici
+                </h3>
+
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    TikTok
+                </a>
+
+                <a href="#">
+                    Pinterest
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 ARTÉA —
+            Tutti i diritti riservati.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         OVERLAY
+    ====================================================== -->
+
+    <div
+        class="overlay"
+        id="overlay"
+    ></div>
+
+
+    <!-- =====================================================
+         CART
+    ====================================================== -->
+
+    <aside
+        class="cart"
+        id="cart"
+    >
+
+        <div class="cart-header">
+
+            <h2>
+                Il tuo carrello
+            </h2>
+
+
+            <button
+                class="close-cart"
+                onclick="closeCart()"
+                aria-label="Chiudi carrello"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        >
+
+            <div class="empty-cart">
+                Il carrello è vuoto.
+            </div>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="total">
+
+                <span>
+                    Totale
+                </span>
+
+                <span id="cartTotal">
+                    €0,00
+                </span>
+
+            </div>
+
+
+            <button
+                class="checkout"
+                onclick="checkout()"
+            >
+                Procedi al checkout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    ></div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =====================================================
+           CART
+        ===================================================== */
+
+        let cart = [];
+
+
+        /* =====================================================
+           OPEN CART
+        ===================================================== */
+
+        function openCart() {
+
+            document
+                .getElementById("cart")
+                .classList
+                .add("open");
+
+
+            document
+                .getElementById("overlay")
+                .classList
+                .add("active");
+
+        }
+
+
+        /* =====================================================
+           CLOSE CART
+        ===================================================== */
+
+        function closeCart() {
+
+            document
+                .getElementById("cart")
+                .classList
+                .remove("open");
+
+
+            document
+                .getElementById("overlay")
+                .classList
+                .remove("active");
+
+        }
+
+
+        /* =====================================================
+           ADD TO CART
+        ===================================================== */
+
+        function addToCart(
+            name,
+            price,
+            image
+        ) {
+
+            const existing =
+                cart.find(
+                    item =>
+                        item.name === name
+                );
+
+
+            if (existing) {
+
+                existing.quantity++;
+
+            } else {
+
+                cart.push({
+
+                    name: name,
+
+                    price: Number(price),
+
+                    image: image,
+
+                    quantity: 1
+
+                });
+
+            }
+
+
+            updateCart();
+
+
+            showToast(
+                name +
+                " aggiunto al carrello!"
+            );
+
+
+            openCart();
+
+        }
+
+
+        /* =====================================================
+           REMOVE
+        ===================================================== */
+
+        function removeFromCart(index) {
+
+            if (
+                index < 0 ||
+                index >= cart.length
+            ) {
+                return;
+            }
+
+
+            cart.splice(index, 1);
+
+
+            updateCart();
+
+
+            showToast(
+                "Prodotto rimosso dal carrello."
+            );
+
+        }
+
+
+        /* =====================================================
+           CHANGE QUANTITY
+        ===================================================== */
+
+        function changeQuantity(
+            index,
+            amount
+        ) {
+
+            if (
+                index < 0 ||
+                index >= cart.length
+            ) {
+                return;
+            }
+
+
+            cart[index].quantity += amount;
+
+
+            if (
+                cart[index].quantity <= 0
+            ) {
+
+                cart.splice(index, 1);
+
+            }
+
+
+            updateCart();
+
+        }
+
+
+        /* =====================================================
+           UPDATE CART
+        ===================================================== */
+
+        function updateCart() {
+
+            const container =
+                document.getElementById(
+                    "cartItems"
+                );
+
+
+            const totalElement =
+                document.getElementById(
+                    "cartTotal"
+                );
+
+
+            if (
+                !container ||
+                !totalElement
+            ) {
+                return;
+            }
+
+
+            if (
+                cart.length === 0
+            ) {
+
+                container.innerHTML = `
+
+                    <div class="empty-cart">
+                        Il carrello è vuoto.
+                    </div>
+
+                `;
+
+
+                totalElement.textContent =
+                    "€0,00";
+
+
+                return;
+
+            }
+
+
+            let total = 0;
+
+
+            container.innerHTML =
+                cart.map(
+                    (
+                        item,
+                        index
+                    ) => {
+
+                        total +=
+                            Number(item.price) *
+                            Number(item.quantity);
+
+
+                        return `
+
+                            <div class="cart-item">
+
+                                <div
+                                    class="cart-thumb ${item.image}"
+                                ></div>
+
+
+                                <div
+                                    class="cart-item-info"
+                                >
+
+                                    <strong>
+                                        ${escapeHTML(item.name)}
+                                    </strong>
+
+
+                                    <span>
+                                        €${Number(item.price).toFixed(2)}
+                                    </span>
+
+
+                                    <div
+                                        style="
+                                            display:flex;
+                                            align-items:center;
+                                            gap:8px;
+                                            margin-top:8px;
+                                        "
+                                    >
+
+                                        <button
+                                            onclick="changeQuantity(${index}, -1)"
+                                            style="
+                                                width:28px;
+                                                height:28px;
+                                                border:1px solid #ddd;
+                                                background:white;
+                                                border-radius:6px;
+                                            "
+                                        >
+                                            −
+                                        </button>
+
+
+                                        <strong
+                                            style="
+                                                min-width:20px;
+                                                text-align:center;
+                                            "
+                                        >
+                                            ${item.quantity}
+                                        </strong>
+
+
+                                        <button
+                                            onclick="changeQuantity(${index}, 1)"
+                                            style="
+                                                width:28px;
+                                                height:28px;
+                                                border:1px solid #ddd;
+                                                background:white;
+                                                border-radius:6px;
+                                            "
+                                        >
+                                            +
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+
+                                <button
+                                    class="remove"
+                                    onclick="removeFromCart(${index})"
+                                    aria-label="Rimuovi prodotto"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+                        `;
+
+                    }
+                ).join("");
+
+
+            totalElement.textContent =
+                "€" +
+                total.toFixed(2);
+
+        }
+
+
+        /* =====================================================
+           FILTER
+        ===================================================== */
+
+        function filterProducts(
+            category,
+            button
+        ) {
+
+            document
+                .querySelectorAll(".filter")
+                .forEach(
+                    btn => {
+
+                        btn.classList
+                            .remove("active");
+
+                    }
+                );
+
+
+            if (button) {
+
+                button.classList
+                    .add("active");
+
+            }
+
+
+            document
+                .querySelectorAll(".product")
+                .forEach(
+                    product => {
+
+                        const
+                            productCategory =
+                            product.dataset.category;
+
+
+                        if (
+                            category === "all" ||
+                            productCategory === category
+                        ) {
+
+                            product.style.display =
+                                "";
+
+                        } else {
+
+                            product.style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+        }
+
+
+        /* =====================================================
+           FAVORITES
+        ===================================================== */
+
+        function favorite(button) {
+
+            if (!button) {
+                return;
+            }
+
+
+            if (
+                button.textContent.trim()
+                === "♡"
+            ) {
+
+                button.textContent =
+                    "♥";
+
+                button.style.color =
+                    "#c14b4b";
+
+
+                showToast(
+                    "Aggiunto ai preferiti ❤️"
+                );
+
+            } else {
+
+                button.textContent =
+                    "♡";
+
+                button.style.color =
+                    "";
+
+
+                showToast(
+                    "Rimosso dai preferiti"
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           TOAST
+        ===================================================== */
+
+        function showToast(message) {
+
+            const toast =
+                document.getElementById(
+                    "toast"
+                );
+
+
+            if (!toast) {
+                return;
+            }
+
+
+            toast.textContent =
+                message;
+
+
+            toast.classList
+                .add("show");
+
+
+            clearTimeout(
+                window.toastTimeout
+            );
+
+
+            window.toastTimeout =
+                setTimeout(
+                    () => {
+
+                        toast.classList
+                            .remove("show");
+
+                    },
+                    2500
+                );
+
+        }
+
+
+        /* =====================================================
+           NEWSLETTER
+        ===================================================== */
+
+        function subscribe(event) {
+
+            event.preventDefault();
+
+
+            const input =
+                event.target.querySelector(
+                    "input"
+                );
+
+
+            if (!input) {
+                return;
+            }
+
+
+            const email =
+                input.value.trim();
+
+
+            if (!email) {
+                return;
+            }
+
+
+            showToast(
+                "Grazie! " +
+                email +
+                " è stata iscritta alla newsletter."
+            );
+
+
+            event.target.reset();
+
+        }
+
+
+        /* =====================================================
+           CHECKOUT
+           
+           IMPORTANTE:
+           
+           Il browser NON apre direttamente
+           server.js.
+
+           Invia invece una richiesta HTTP
+           alla route del tuo server:
+
+               POST /create-checkout-session
+
+           Il server.js riceve il carrello,
+           crea la sessione Stripe e restituisce
+           l'URL del checkout.
+        ===================================================== */
+
+        async function checkout() {
+
+            /* ---------------------------------------------
+               Controllo carrello
+            --------------------------------------------- */
+
+            if (
+                !cart ||
+                cart.length === 0
+            ) {
+
+                showToast(
+                    "Il carrello è vuoto."
+                );
+
+                return;
+
+            }
+
+
+            /* ---------------------------------------------
+               Pulsante checkout
+            --------------------------------------------- */
+
+            const checkoutButton =
+                document.querySelector(
+                    ".checkout"
+                );
+
+
+            if (checkoutButton) {
+
+                checkoutButton.disabled =
+                    true;
+
+                checkoutButton.textContent =
+                    "Apertura checkout...";
+
+            }
+
+
+            try {
+
+                /* -----------------------------------------
+                   INVIO AL SERVER.JS
+                ----------------------------------------- */
+
+                const response =
+                    await fetch(
+                        "/create-checkout-session",
+                        {
+
+                            method: "POST",
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json"
+
+                            },
+
+                            body:
+                                JSON.stringify({
+                                    cart: cart
+                                })
+
+                        }
+                    );
+
+
+                /* -----------------------------------------
+                   RISPOSTA DEL SERVER
+                ----------------------------------------- */
+
+                let data;
+
+
+                try {
+
+                    data =
+                        await response.json();
+
+                } catch {
+
+                    throw new Error(
+                        "Il server ha restituito una risposta non valida."
+                    );
+
+                }
+
+
+                /* -----------------------------------------
+                   CONTROLLO HTTP
+                ----------------------------------------- */
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data.error ||
+                        "Errore durante la creazione del checkout."
+                    );
+
+                }
+
+
+                /* -----------------------------------------
+                   CONTROLLO URL STRIPE
+                ----------------------------------------- */
+
+                if (!data.url) {
+
+                    throw new Error(
+                        "Il server non ha restituito l'URL di Stripe."
+                    );
+
+                }
+
+
+                /* -----------------------------------------
+                   REDIRECT STRIPE
+                ----------------------------------------- */
+
+                window.location.href =
+                    data.url;
+
+            }
+
+
+            catch (error) {
+
+                console.error(
+                    "Checkout error:",
+                    error
+                );
+
+
+                showToast(
+                    error.message ||
+                    "Si è verificato un errore durante il checkout."
+                );
+
+
+                /* -----------------------------------------
+                   RIATTIVA PULSANTE
+                ----------------------------------------- */
+
+                if (checkoutButton) {
+
+                    checkoutButton.disabled =
+                        false;
+
+                    checkoutButton.textContent =
+                        "Procedi al checkout";
+
+                }
+
+            }
+
+        }
+
+
+        /* =====================================================
+           ESCAPE HTML
+        ===================================================== */
+
+        function escapeHTML(value) {
+
+            return String(value)
+
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+
+        }
+
+
+        /* =====================================================
+           ESC KEY
+        ===================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeCart();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           INITIALIZE OVERLAY
+        ===================================================== */
+
+        const overlay =
+            document.getElementById(
+                "overlay"
+            );
+
+
+        if (overlay) {
+
+            overlay.addEventListener(
+                "click",
+                closeCart
+            );
+
+        }
+
+
+        /* =====================================================
+           RESET CHECKOUT BUTTON
+        ===================================================== */
+
+        window.addEventListener(
+            "pageshow",
+            function() {
+
+                const checkoutButton =
+                    document.querySelector(
+                        ".checkout"
+                    );
+
+
+                if (checkoutButton) {
+
+                    checkoutButton.disabled =
+                        false;
+
+                    checkoutButton.textContent =
+                        "Procedi al checkout";
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           INITIAL CART
+        ===================================================== */
+
+        updateCart();
+
+    </script>
+
+</body>
+</html>
+```
