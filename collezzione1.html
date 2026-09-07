@@ -1,0 +1,256 @@
+```html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>ARTÉA — Collezioni</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f7f5f1;
+color:#171717;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:10;
+background:rgba(247,245,241,.9);
+backdrop-filter:blur(18px);
+border-bottom:1px solid #ddd8d0;
+}
+
+.navbar{
+max-width:1250px;
+height:78px;
+margin:auto;
+padding:0 25px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-size:24px;
+font-weight:900;
+letter-spacing:4px;
+}
+
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:#222;
+font-size:14px;
+font-weight:700;
+}
+
+main{
+padding:150px 25px 100px;
+max-width:1250px;
+margin:auto;
+}
+
+.hero{
+margin-bottom:70px;
+}
+
+.eyebrow{
+color:#a2764d;
+font-size:12px;
+letter-spacing:3px;
+font-weight:800;
+}
+
+h1{
+font-size:75px;
+letter-spacing:-4px;
+margin:15px 0;
+}
+
+.hero p{
+max-width:600px;
+color:#777;
+line-height:1.8;
+}
+
+.collections{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+.collection{
+height:430px;
+border-radius:25px;
+overflow:hidden;
+position:relative;
+cursor:pointer;
+}
+
+.collection::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(transparent 45%,rgba(0,0,0,.75));
+}
+
+.c1{
+background:
+radial-gradient(circle at 35% 40%,#d2b394 0 18%,transparent 19%),
+linear-gradient(135deg,#eee7dd,#252525);
+}
+
+.c2{
+background:
+linear-gradient(45deg,transparent 40%,#111 41% 50%,transparent 51%),
+#e2d5c4;
+}
+
+.c3{
+background:
+radial-gradient(circle at 60% 45%,#1b1b1b 0 25%,transparent 26%),
+#c09c78;
+}
+
+.c4{
+background:
+linear-gradient(130deg,#151515 0 30%,#b89570 31% 60%,#eee6db 61%);
+}
+
+.collection-info{
+position:absolute;
+z-index:2;
+bottom:30px;
+left:30px;
+color:white;
+}
+
+.collection-info h2{
+font-size:38px;
+margin-bottom:8px;
+}
+
+.collection-info p{
+color:#ddd;
+}
+
+@media(max-width:700px){
+
+nav{
+display:none;
+}
+
+.collections{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:52px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">ARTÉA</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="collezioni.html">Collezioni</a>
+<a href="chi-siamo.html">Chi siamo</a>
+<a href="contatti.html">Contatti</a>
+</nav>
+
+<div>🛒</div>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<span class="eyebrow">ARTÉA CURATED</span>
+
+<h1>Le nostre collezioni.</h1>
+
+<p>
+Quattro mondi visivi creati per adattarsi a
+diversi stili di arredamento.
+</p>
+
+</section>
+
+<section class="collections">
+
+<div class="collection c1"
+onclick="location.href='shop.html'">
+
+<div class="collection-info">
+<h2>Soft Neutrals</h2>
+<p>Calde tonalità naturali.</p>
+</div>
+
+</div>
+
+<div class="collection c2"
+onclick="location.href='shop.html'">
+
+<div class="collection-info">
+<h2>Minimal Lines</h2>
+<p>Geometrie essenziali.</p>
+</div>
+
+</div>
+
+<div class="collection c3"
+onclick="location.href='shop.html'">
+
+<div class="collection-info">
+<h2>Dark Balance</h2>
+<p>Contrasti decisi e profondi.</p>
+</div>
+
+</div>
+
+<div class="collection c4"
+onclick="location.href='shop.html'">
+
+<div class="collection-info">
+<h2>Modern Living</h2>
+<p>Design contemporaneo.</p>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</body>
+</html>
+```
